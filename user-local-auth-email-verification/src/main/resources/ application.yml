@@ -1,0 +1,16 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: user-local-auth-email-verification
+  datasource:
+    url: jdbc:postgresql://localhost:5432/email_verification_demo
+    username: postgres
+    password: *
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+mailtrap:
+  api-token: ${MAILTRAP_API_TOKEN}
